@@ -9,9 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        whatever: '#CA7520',
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
+        primary: '#FFFCF6',
+        secondary: '#CA7520',
+      },
+      fontFamily: {
+        oleo: ['Oleo Script', 'cursive'],
+        oleoSwash: ['Oleo Script Swash Caps', 'cursive'],
+        inknut: ['Inknut Antiqua', 'serif'],
+        fraunces: ['Fraunces', 'serif'],
       },
     },
   },
