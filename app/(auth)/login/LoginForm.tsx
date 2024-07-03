@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { getSafeReturnToPath } from '../../utils/validation';
 import { Route } from 'next';
+import Link from 'next/link';
 
 type Props = { returnTo?: string | string[] };
 
@@ -41,45 +42,69 @@ export default function LoginForm(props: Props) {
   }
 
   return (
-    <>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-        }}
-      >
-        <label>
-          username:
-          <input
-            onChange={(e) => {
-              setUserName(e.currentTarget.value);
-            }}
-          ></input>
-        </label>
-
-        <label>
-          password:
-          <input
-            type="password"
-            onChange={(e) => {
-              setPassword(e.currentTarget.value);
-            }}
-          ></input>
-        </label>
-
-        <button
-          onClick={async () => {
-            await login();
-            router.refresh();
+    <div className="mt-[103px] flex justify-center bg-tertiary h-full font-inknut">
+      <div className="w-[500px] mt-16">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
           }}
+          className="flex flex-col"
         >
-          login
-        </button>
-      </form>
-      {error === 'successful' ? (
-        <div>The login was successful!</div>
-      ) : (
-        error !== '' && <div>{error}</div>
-      )}
-    </>
+          <h1 className="text-[28px] text-center">Login</h1>
+          <div className="flex justify-center gap-5 mt-4 relative text-[16px]">
+            <p>Don't have an account?</p>
+            <p>
+              <Link
+                href="/register"
+                className=" hover:text-secondary inline-block"
+              >
+                Sign in here.
+              </Link>
+            </p>
+          </div>
+          <div className="mt-7">
+            <label className="block text-[15px]">
+              Username
+              <input
+                onChange={(e) => {
+                  setUserName(e.currentTarget.value);
+                }}
+                className="border-2 border-secondary w-full h-10"
+              ></input>
+            </label>
+          </div>
+          <div className="mt-4">
+            <label className="block text-[15px]">
+              Password
+              <input
+                type="password"
+                onChange={(e) => {
+                  setPassword(e.currentTarget.value);
+                }}
+                className="border-2 border-secondary w-full h-10"
+              ></input>
+            </label>
+          </div>
+          <div className="flex justify-center mt-6">
+            <button
+              onClick={async () => {
+                await login();
+                router.refresh();
+              }}
+              className="bg-secondary w-[130px] h-9 rounded-md text-white font-inknut font-semibold text-[15px] uppercase"
+            >
+              LOGIN
+            </button>
+          </div>
+        </form>
+        <div className=" font-fraunces text-lg flex justify-center w-full">
+          {error === 'successful' ? (
+            <div className="mt-10">The login was successful!</div>
+          ) : (
+            error !== '' && <div className="mt-10">{error}</div>
+          )}
+        </div>
+      </div>
+    </div>
   );
 }

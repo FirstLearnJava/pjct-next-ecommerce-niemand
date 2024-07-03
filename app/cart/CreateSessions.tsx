@@ -23,6 +23,11 @@ export default function CreateSessions(props: CreateSessionsProps) {
     router.push(data.sessions.url);
   }
   return (
-    <button onClick={() => CreateSessionsAndRedirect()}>Buy products</button>
+    <button
+      onClick={() => CreateSessionsAndRedirect()}
+      className="bg-secondary w-[130px] h-9 rounded-md text-white font-inknut font-semibold text-[14px] uppercase mt-12"
+    >
+      Check out
+    </button>
   );
 }

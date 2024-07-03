@@ -1,0 +1,19 @@
+.shapeDividerHeaderBottom {
+  margin-top: -29px;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.shapeDividerHeaderBottom svg {
+  position: relative;
+  display: block;
+  width: calc(113% + 1.3px);
+  height: 30px;
+}
+
+.shapeDividerHeaderBottom .shapeFill {
+  fill: #fffcf6;
+}
+//shape-divider-header-bottom

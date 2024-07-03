@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "camelcase": "^8.0.0",
     "dotenv-cli": "^7.4.2",
     "dotenv-safe": "^9.1.0",
     "esm": "^3.2.25",

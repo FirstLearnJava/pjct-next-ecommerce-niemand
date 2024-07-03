@@ -22,19 +22,17 @@ export async function POST(
   const body = await request.json();
   const result = userSchema.safeParse(body);
 
-  console.log(await getUsers());
-
   if (!result.success) {
     return NextResponse.json(
       {
-        error: 'username or password missing',
+        error: 'Username or password is missing, please try again.',
       },
       { status: 400 },
     );
   }
   if (await getUserByUsername(result.data.username)) {
     return NextResponse.json(
-      { error: 'The username is already taken' },
+      { error: 'Username is already taken, please try again.' },
       { status: 406 },
     );
   }
@@ -48,7 +46,7 @@ export async function POST(
     // console.log(result.error);
     return NextResponse.json(
       {
-        error: 'Error creating the new user',
+        error: 'There was an error creating the new user, please try again.',
       },
       { status: 500 },
     );
@@ -60,7 +58,9 @@ export async function POST(
 
   if (!session) {
     return NextResponse.json(
-      { error: 'Error creating the new session' },
+      {
+        error: 'There was an error creating the new session, please try again.',
+      },
       { status: 500 },
     );
   }

@@ -1,0 +1,20 @@
+.shapeDividerHomepageAbout {
+  /*   position: absolute;
+  top: 0;
+  left: 0; */
+  margin-bottom: -40px;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.shapeDividerHomepageAbout svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 40px;
+}
+
+.shapeDividerHomepageAbout .shapeFill {
+  fill: #fffcf6;
+}

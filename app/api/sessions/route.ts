@@ -4,6 +4,7 @@ import { stripeClient } from '../../utils/stripe';
 export async function POST(request: NextRequest) {
   const body = await request.json();
   const session = await stripeClient.checkout.sessions.create({
+    // replace the url with the domain once the app is deployed
     success_url: 'http://localhost:3000/success',
     line_items: body.products.map(
       (product: { price: string; quantity: number }) => ({

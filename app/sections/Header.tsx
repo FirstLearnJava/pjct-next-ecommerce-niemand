@@ -7,30 +7,55 @@ type HeaderProps = {
 };
 
 export default function Header({ scrolled, isHomePage }: HeaderProps) {
+  function logoOnHover() {
+    if (scrolled && isHomePage) {
+      return 'group-hover:text-secondary';
+    } else if (!isHomePage) {
+      return 'group-hover:text-secondary';
+    }
+  }
+
   return (
     <header
-      className={`w-full  fixed ${scrolled && isHomePage ? 'bg-primary border-secondary border-b-[3px]' : 'bg-transparent border-b-0 text-white'}`}
+      className={`w-full  fixed z-10 ${!scrolled && isHomePage ? 'bg-transparent border-b-0 text-white' : 'bg-primary border-secondary border-b-[3px]'}`}
     >
-      <nav className="flex justify-between items-center w-[86%] mx-auto h-[96px]">
-        <div className=" flex flex-col items-center justify-center mt-1">
+      <nav className="flex justify-between items-center w-[86%] mx-auto h-[100px]">
+        <div className=" flex flex-col items-center justify-center mt-1 group">
           <Link href="/">
-            <Image src="/header/logo.svg" alt="logo" width={40} height={45} />
+            <Image
+              src={`${!scrolled && isHomePage ? '/header/logoWhite.svg' : '/header/logoBlack.svg'}`}
+              alt="logo"
+              width={40}
+              height={45}
+              className="group-hover:scale-105 mb-[2px]"
+            />
           </Link>
           <Link href="/">
-            <div className="font-oleoSwash text-sm leading-3">Pottery by</div>
+            <div
+              className={`font-oleoSwash text-sm leading-3 ${logoOnHover()}`}
+            >
+              Pottery by
+            </div>
           </Link>
           <Link href="/">
-            <div className="font-oleoSwash text-sm leading-4">Niemand</div>
+            <div
+              className={`font-oleoSwash text-sm leading-4 ${logoOnHover()}`}
+            >
+              Niemand
+            </div>
           </Link>
         </div>
-        <div className="flex gap-20 ">
-          <Link className=" font-oleo text-lg " href="/">
+        <div className="flex gap-20">
+          <Link className="font-oleo text-[22px] hover:scale-105" href="/">
             Home
           </Link>
-          <Link className=" font-oleo text-lg " href="/">
+          <Link className="font-oleo text-[22px] hover:scale-105" href="/about">
             About Us
           </Link>
-          <Link className=" font-oleo text-lg " href="/">
+          <Link
+            className="font-oleo text-[22px] hover:scale-105"
+            href="/products"
+          >
             Catalogue
           </Link>
           {/* {user ? (
@@ -41,21 +66,23 @@ export default function Header({ scrolled, isHomePage }: HeaderProps) {
           </>
         )} */}
         </div>
-        <div className="flex gap-7">
+        <div className="flex gap-10 ">
           <Link href="/login">
             <Image
-              src="/header/userSymbol.svg"
+              src={`${!scrolled && isHomePage ? '/header/userSymbolWhite.svg' : '/header/userSymbolBlack.svg'}`}
               alt="user symbol"
-              width={18}
-              height={22}
+              width={20}
+              height={23}
+              className="hover:scale-110"
             />
           </Link>
           <Link href="/cart">
             <Image
-              src="/header/cartSymbol.svg"
+              src={`${!scrolled && isHomePage ? '/header/cartSymbolWhite.svg' : '/header/cartSymbolBlack.svg'}`}
               alt="cart symbol"
-              width={22}
-              height={22}
+              width={23}
+              height={23}
+              className="hover:scale-110 mt-[1px]"
             />
           </Link>
         </div>

@@ -2,6 +2,7 @@
 
 import { cookies } from 'next/headers';
 import { deleteSessionByToken } from '../../database/sessions';
+import { redirect } from 'next/navigation';
 
 export async function logout() {
   const cookieStore = cookies();
@@ -10,5 +11,6 @@ export async function logout() {
   if (token) {
     deleteSessionByToken(token.value);
     cookieStore.set('sessionToken', '', { maxAge: 0 });
+    redirect('/login');
   }
 }

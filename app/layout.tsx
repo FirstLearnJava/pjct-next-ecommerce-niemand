@@ -27,9 +27,9 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 
   return (
     <html lang="en">
-      <body>
+      <body className="relative h-screen flex flex-col">
         <ClientHeader />
-        {children}
+        <div className=" flex-1">{children}</div>
         <Footer />
       </body>
     </html>

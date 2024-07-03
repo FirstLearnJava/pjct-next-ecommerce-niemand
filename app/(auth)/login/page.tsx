@@ -10,6 +10,7 @@ export default function page({ searchParams }: Props) {
   const sessionCookie = cookies().get('sessionToken');
   const session = sessionCookie && getValidSessionByToken(sessionCookie.value);
 
-  if (session) redirect('/');
+  if (session) redirect('/logout');
+  // Use the redirect option, if redirection to other page is necessary, when user is already logged in
   return <LoginForm returnTo={searchParams.returnTo} />;
 }

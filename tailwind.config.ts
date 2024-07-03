@@ -10,13 +10,19 @@ const config: Config = {
     extend: {
       colors: {
         primary: '#FFFCF6',
-        secondary: '#CA7520',
+        secondary: '#d3791e',
+        tertiary: '#fffefb',
+        /* #CA7520 */
       },
       fontFamily: {
         oleo: ['Oleo Script', 'cursive'],
         oleoSwash: ['Oleo Script Swash Caps', 'cursive'],
         inknut: ['Inknut Antiqua', 'serif'],
         fraunces: ['Fraunces', 'serif'],
+        alegreya: ['Alegreya Sans', 'sans-serif'],
+      },
+      height: {
+        'screen-30px': 'calc(100vh + 30px)',
       },
     },
   },
