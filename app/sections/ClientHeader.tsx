@@ -1,17 +1,34 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import Header from './Header';
+import { useRouter } from 'next/navigation';
+import { UrlObject } from 'url';
 
-export default function ClientHeader() {
+type ClientHeaderProps = {
+  menuOpen: boolean;
+  setMenuOpen: (open: boolean) => void;
+};
+
+type Route = string | UrlObject;
+
+export default function ClientHeader({
+  menuOpen,
+  setMenuOpen,
+}: ClientHeaderProps) {
+  const router = useRouter();
+  const handleNavigation = (path: Route) => {
+    setMenuOpen(false);
+    router.push(path);
+  };
   const pathname = usePathname();
 
   const isHomepage = pathname === '/';
 
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!isHomepage) return;
 
     function handleScroll() {
@@ -29,5 +46,14 @@ export default function ClientHeader() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [isHomepage]);
-  return <Header scrolled={scrolled} isHomePage={isHomepage} />;
+
+  return (
+    <Header
+      scrolled={scrolled}
+      isHomePage={isHomepage}
+      menuOpen={menuOpen}
+      setMenuOpen={setMenuOpen}
+      handleNavigation={handleNavigation}
+    />
+  );
 }

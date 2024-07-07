@@ -22,9 +22,11 @@ export default async function TotalPrice(props: TotalPriceProps) {
 
   if (totalPriceSum) {
     return (
-      <div className="mr-4 text-lg mt-9 font-inknut">
+      <div className="md:mr-4 text-lg mt-9 font-inknut">
         Subtotal
-        <span className="font-fraunces text-lg ml-20">€ {totalPriceSum}</span>
+        <span className="font-fraunces text-lg  ml-6 md:ml-20">
+          € {totalPriceSum}
+        </span>
       </div>
     );
   }

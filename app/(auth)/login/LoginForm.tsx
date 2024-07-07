@@ -42,8 +42,8 @@ export default function LoginForm(props: Props) {
   }
 
   return (
-    <div className="mt-[103px] flex justify-center bg-tertiary h-full font-inknut">
-      <div className="w-[500px] mt-16">
+    <div className="mt-[103px] flex justify-center bg-tertiary font-inknut">
+      <div className="md:w-[500px] mt-16 mx-[10%] md:mx-0">
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -51,7 +51,7 @@ export default function LoginForm(props: Props) {
           className="flex flex-col"
         >
           <h1 className="text-[28px] text-center">Login</h1>
-          <div className="flex justify-center gap-5 mt-4 relative text-[16px]">
+          <div className="flex justify-center md:gap-5 gap-3 md:mt-4 mt-5 relative md:text-[16px] text-sm">
             <p>Don't have an account?</p>
             <p>
               <Link
@@ -85,7 +85,7 @@ export default function LoginForm(props: Props) {
               ></input>
             </label>
           </div>
-          <div className="flex justify-center mt-6">
+          <div className="flex justify-center mt-6 mb-12 md:mb-0">
             <button
               onClick={async () => {
                 await login();

@@ -25,7 +25,7 @@ export default function CreateSessions(props: CreateSessionsProps) {
   return (
     <button
       onClick={() => CreateSessionsAndRedirect()}
-      className="bg-secondary w-[130px] h-9 rounded-md text-white font-inknut font-semibold text-[14px] uppercase mt-12"
+      className="bg-secondary w-[130px] h-9 rounded-md text-white font-inknut font-semibold text-[14px] uppercase md:mt-12 mt-6"
     >
       Check out
     </button>

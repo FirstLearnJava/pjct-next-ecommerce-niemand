@@ -24,6 +24,9 @@ const config: Config = {
       height: {
         'screen-30px': 'calc(100vh + 30px)',
       },
+      backgroundImage: {
+        hero: "url('/heroSectionBackground.jpg')",
+      },
     },
   },
   plugins: [],

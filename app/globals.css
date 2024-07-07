@@ -6,6 +6,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .bg-custom-gradient {
+    background-image: linear-gradient(
+      to right top,
+      #f7c85d,
+      #f3c057,
+      #efb851,
+      #ebb04b,
+      #e7a845,
+      #e7a742,
+      #e7a540,
+      #e7a43d,
+      #ebaa3c,
+      #eeaf3c,
+      #f1b53b,
+      #f4bb3a
+    );
+  }
+}
+
 * {
   box-sizing: border-box;
   line-height: 1.4rem;

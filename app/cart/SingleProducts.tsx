@@ -25,8 +25,11 @@ export default async function SingleProducts() {
         const databaseProduct = await getSingleProductsById(cartProduct.id);
         return (
           <div key={`cartProduct-${cartProduct.id}`}>
-            <div className="border-b-2 flex justify-between py-5">
-              <div className="flex">
+            <div className="border-b-2 md:flex justify-between py-8">
+              <div className="flex flex-col items-center md:flex-row">
+                <p className="font-fraunces md:hidden uppercase text-[16px] mb-4">
+                  {databaseProduct!.productName}
+                </p>
                 <Image
                   src={`/pottery/${camelcase(databaseProduct!.productName)}.jpg`}
                   width="130"
@@ -34,25 +37,34 @@ export default async function SingleProducts() {
                   alt={databaseProduct!.productName}
                   className="rounded-md"
                 ></Image>
-                <div className="ml-7 mt-7 uppercase ">
-                  <p className=" font-fraunces">
+                <div className="md:ml-7 md:mt-7 uppercase ">
+                  <p className="font-fraunces hidden md:inline">
                     {databaseProduct!.productName}
                   </p>
-                  <RemoveButton id={cartProduct.id} />
+                  <div className="flex mt-7 gap-10 items-center ">
+                    <RemoveButton id={cartProduct.id} />
+                    <ChangeQuantity cartProductQuantity={cartProduct} />
+                    <p className="md:hidden font-medium text-sm w-[62px] text-right">
+                      €{' '}
+                      {(databaseProduct!.price * cartProduct!.quantity).toFixed(
+                        2,
+                      )}
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex gap-16 items-center font-fraunces">
-                <p className="w-[100px] text-right mr-1">
+              <div className="hidden md:flex flex-col md:flex-row md:gap-16 md:items-center font-fraunces">
+                <p className=" md:w-[100px] text-right mr-1">
                   € {databaseProduct!.price}
                 </p>
-                <div className="flex w-[140px] gap-[8px]">
+                <div className="flex md:w-[140px] gap-[8px]">
                   <p className="text-right w-[70px]">
                     {cartProduct.quantity} pc(s)
                   </p>
                   <ChangeQuantity cartProductQuantity={cartProduct} />
                 </div>
-                <p className="w-[80px] text-right mr-4">
+                <p className="md:w-[80px] text-right mr-4">
                   €{' '}
                   {(databaseProduct!.price * cartProduct!.quantity).toFixed(2)}
                 </p>

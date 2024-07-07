@@ -27,7 +27,7 @@ export default function RegisterForm() {
   }
 
   return (
-    <div className="mt-16 font-inknut w-[500px]">
+    <div className="mt-16 font-inknut md:w-[500px] mx-[10%] md:mx-0">
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -35,7 +35,7 @@ export default function RegisterForm() {
         className="flex flex-col"
       >
         <h1 className="text-[28px] text-center">Create Account</h1>
-        <div className="flex justify-center gap-5 mt-4 relative text-[16px]">
+        <div className="flex justify-center md:gap-5 gap-3 md:mt-4 mt-5 relative md:text-[16px] text-sm text-center">
           <p>Already have an account?</p>
           <p>
             <Link href="/login" className=" hover:text-secondary inline-block">
@@ -44,25 +44,29 @@ export default function RegisterForm() {
           </p>
         </div>
         <div className="mt-7">
-          <label className="block text-[15px]">Username</label>
-          <input
-            onChange={(e) => {
-              setUserName(e.currentTarget.value);
-            }}
-            className="border-2 border-secondary w-full h-10"
-          ></input>
+          <label className="block text-[15px]">
+            Username
+            <input
+              onChange={(e) => {
+                setUserName(e.currentTarget.value);
+              }}
+              className="border-2 border-secondary w-full h-10"
+            ></input>
+          </label>
         </div>
         <div className="mt-4">
-          <label className="block text-[15px]">Password</label>
-          <input
-            type="password"
-            onChange={(e) => {
-              setPassword(e.currentTarget.value);
-            }}
-            className="border-2 border-secondary w-full h-10"
-          ></input>
+          <label className="block text-[15px]">
+            Password
+            <input
+              type="password"
+              onChange={(e) => {
+                setPassword(e.currentTarget.value);
+              }}
+              className="border-2 border-secondary w-full h-10"
+            ></input>
+          </label>
         </div>
-        <div className="flex justify-center mt-6">
+        <div className="flex justify-center mt-6 mb-12 md:mb-0">
           <button
             onClick={async () => {
               await register();
