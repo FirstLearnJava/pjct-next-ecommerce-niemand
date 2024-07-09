@@ -58,11 +58,11 @@ export default async function CartPage() {
           </Link>
           <section className="md:w-[70%] w-[90%] mt-16 md:mt-24 mr-[1%] md:text-[16px] text-[12px]">
             <div className=" border-b-2 md:flex justify-between">
-              <p className="hidden md:inline">PRODUCT</p>
-              <div className="hidden md:flex md:gap-16  mr-[3px]">
-                <p className="md:w-[100px] text-right mr-1">PRICE</p>
-                <p className="md:w-[140px] text-center">QUANTITY</p>
-                <p className="md:w-[80px] mr-4 text-right">TOTAL</p>
+              <p className="hidden lg:inline">PRODUCT</p>
+              <div className="hidden lg:flex lg:gap-16  mr-[3px]">
+                <p className="lg:w-[100px] text-right mr-1">PRICE</p>
+                <p className="lg:w-[140px] text-center">QUANTITY</p>
+                <p className="lg:w-[80px] mr-4 text-right">TOTAL</p>
               </div>
             </div>
             <SingleProducts />
@@ -122,11 +122,26 @@ export default async function CartPage() {
     );
   } else {
     return (
-      <div className="mt-[103px]">
-        <Link href="/products">Back to products</Link>
-        <div className="flex flex-col items-center justify-center">
-          <SingleProducts />
-          <TotalPrice cartProducts={cartProducts} />
+      <div className=" mt-[112px] md:mt-[102px] h-full bg-tertiary">
+        <div className="flex justify-start pt-6">
+          <Link
+            href="/products?producttype=all%20products"
+            className="md:ml-14 ml-8 font-medium"
+          >{`← all products`}</Link>
+        </div>
+        <div className=" flex flex-col items-center mt-6 font-fraunces text-lg ">
+          <Link href="/products?producttype=all%20products">
+            <Image
+              src="/cartIcons/emptyCartIcon.png"
+              width={250}
+              height={250}
+              alt="empy cart icon"
+              className="rounded-lg lg:w-[280px] hover:scale-105"
+            ></Image>
+          </Link>
+          <p className="text-center mx-[10%] mb-20 lg:text-xl">
+            Your cart is empty! Let's change that!
+          </p>
         </div>
       </div>
     );

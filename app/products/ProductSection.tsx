@@ -38,7 +38,7 @@ export default function ProductSection(props: Props) {
 
   return (
     <section ref={targetRef}>
-      <h2 className="text-center mt-32 mb-14   font-inknut text-[38px]">
+      <h2 className="text-center sm:mt-32 mt-24 mb-14   font-inknut text-[38px]">
         Collection
       </h2>
       <div className=" border-y-2">
@@ -59,12 +59,12 @@ export default function ProductSection(props: Props) {
         </div>
       </div>
       <div className="flex justify-center mt-10 mb-20">
-        <div className="grid grid-cols-3 mx-[12.5%] *:rounded-md gap-24 font-oleo  ">
+        <div className="grid sm:grid-cols-3 grid-cols-2 mx-[12.5%] *:rounded-md lg:gap-24 gap-[24px]">
           {selectedOption === 'all products'
             ? props.products.map((product: Product) => (
                 <div
                   key={`product-${product.id}`}
-                  className="flex flex-col items-center mb-4"
+                  className="flex flex-col items-start sm:items-center  font-fraunces  sm:mb-4 mb-3"
                 >
                   <Link href={`/products/${JSON.stringify(product.id)}`}>
                     <Image
@@ -75,12 +75,15 @@ export default function ProductSection(props: Props) {
                       className=" rounded"
                     />
                   </Link>
-                  <p className="text-[17px] mt-3">
-                    <Link href={`/products/${JSON.stringify(product.id)}`}>
+                  <p className="sm:mt-3 mt-1 sm:text-center ">
+                    <Link
+                      href={`/products/${JSON.stringify(product.id)}`}
+                      className="sm:text-[18px] lg:text-[20px] text-[17px]  "
+                    >
                       {product.productName}
                     </Link>
                   </p>
-                  <p className="text-[14px]">
+                  <p className="sm:text-[16px] text-[15px] mt-1">
                     <Link href={`/products/${JSON.stringify(product.id)}`}>
                       € {product.price}
                     </Link>
@@ -90,7 +93,7 @@ export default function ProductSection(props: Props) {
             : productsFilter.map((product: Product) => (
                 <div
                   key={`product-${product.id}`}
-                  className="flex flex-col items-center mb-4"
+                  className="flex flex-col items-start sm:items-center sm:mb-4 mb-3 font-fraunces"
                 >
                   <Link href={`/products/${JSON.stringify(product.id)}`}>
                     <Image
@@ -101,12 +104,15 @@ export default function ProductSection(props: Props) {
                       className="rounded"
                     />
                   </Link>
-                  <p className="text-[17px] mt-3">
-                    <Link href={`/products/${JSON.stringify(product.id)}`}>
+                  <p className="sm:mt-3 mt-1 sm:text-center">
+                    <Link
+                      href={`/products/${JSON.stringify(product.id)}`}
+                      className="sm:text-[18px] lg:text-[20px] text-[17px]"
+                    >
                       {product.productName}
                     </Link>
                   </p>
-                  <p className="text-[14px]">
+                  <p className="sm:text-[16px] text-[15px] mt-1">
                     <Link href={`/products/${JSON.stringify(product.id)}`}>
                       € {product.price}
                     </Link>

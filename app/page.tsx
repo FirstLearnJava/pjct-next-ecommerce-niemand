@@ -10,29 +10,29 @@ export default function HomePage() {
     <div className="bg-[#fffcf6] ">
       <div className="relative">
         <div>
-          <div className="md:bg-cover md:block bg-center bg-no-repeat w-full md:h-screen-30px justify-center md:bg-hero bg-custom-gradient pb-[200px] md:pb-0">
-            <section className="pt-[100px] md:px-[190px] mx-[5%] md:mx-0">
-              <h1 className="font-inknut md:text-7xl text-[28px] text-center md:mt-[8%] mt-24 text-white">
+          <div className="xl:bg-cover xl:block bg-center bg-no-repeat w-full xl:h-screen-30px justify-center xl:bg-hero bg-custom-gradient pb-[200px] xl:pb-0">
+            <section className="pt-[100px] lg:px-[190px] mx-[5%] md:mx-0">
+              <h1 className="font-inknut sm:text-4xl  md:text-[44px] lg:text-[56px] xl:text-7xl text-[28px] leading-9 text-center xl:mt-[50px] mt-24 text-white">
                 Welcome to{' '}
-                <span className="font-oleoSwash text-[34px] md:text-[80px]">
+                <span className="font-oleoSwash text-[34px] sm:text-[40px] md:text-[54px] lg:text-[70px] xl:text-[80px]">
                   Niemand
                 </span>
               </h1>
-              <h2 className="text-white font-inknut md:text-3xl text-base text-center md:mt-10 mt-4 ">
+              <h2 className="text-white font-inknut   sm: text-lg md:text-xl lg:text-[32px] lg:leading-9 xl:text-4xl text-base text-center lg:mt-6 xl:mt-10 mt-4 ">
                 Your merchant for unique and contemporary pottery
               </h2>
             </section>
           </div>
         </div>
         <ShapeDividerHomepageHeader />
-        <section className="flex flex-col md:my-[10%] mb-[20%] mt-[20%] w-[75%]  mx-[12.5%]">
+        <section className="flex flex-col md:my-[10%] mb-[20%] mt-[12%] xl:mx-[12.5%] lg:mx-[10%] mx-[7.5%]">
           <h2 className=" text-center font-oleo md:text-[40px] text-3xl md:mb-14 mb-7">
             Shop the Collection
           </h2>
           <div className="flex  ">
-            <div className="flex md:flex-row flex-col gap-16 md:justify-between w-full">
+            <div className="flex sm:flex-row flex-col sm:gap-[3%] sm:justify-between w-full">
               <div className="flex flex-col justify-center items-center">
-                <div className="relative md:w-[330px] md:h-[330px] w-[90%] h-[90%] cursor-pointer">
+                <div className="relative w-[80%] flex justify-center sm:w-[170px] md:w-[186px]  lg:w-[260px]  xl:w-[300px] 2xl:w-[340px]  cursor-pointer">
                   <Link href="/products">
                     <Image
                       alt=""
@@ -49,14 +49,14 @@ export default function HomePage() {
                 <ShopNowButton />
               </div>
               <div className="flex flex-col justify-center items-center">
-                <div className="relative md:w-[330px] md:h-[330px] w-[90%] h-[90%] cursor-pointer">
+                <div className="relative w-[80%] flex sm:w-[170px] md:w-[186px] lg:w-[260px] xl:w-[300px] 2xl:w-[330px] cursor-pointer">
                   <Link href="/products">
                     <Image
                       alt=""
                       width={330}
                       height={330}
                       src="/homepage/test3.jpeg"
-                      className=" rounded-md"
+                      className=" rounded-md "
                     />
                     <p className="absolute flex justify-center items-center inset-0 md:pt-[90px] pt-[70px] text-white font-oleo md:text-3xl text-[28px] z-10 uppercase">
                       Novelty
@@ -66,7 +66,7 @@ export default function HomePage() {
                 <ShopNowButton />
               </div>
               <div className="flex flex-col justify-center items-center ">
-                <div className="relative md:w-[330px] md:h-[330px] w-[90%] h-[90%] cursor-pointer">
+                <div className="relative w-[80%] flex sm:w-[170px] md:w-[186px] lg:w-[260px] xl:w-[300px] 2xl:w-[330px] cursor-pointer">
                   <Link href="/products">
                     <Image
                       alt=""
@@ -87,30 +87,30 @@ export default function HomePage() {
         </section>
         <ShapeDividerHomepageAbout />
         <section className="w-full flex justify-center bg-[#fff1de]">
-          <div className="flex justify-center md:w-[75%] my-[10%] mx-[10%] md:mx-0">
+          <div className="flex justify-center md:w-[75%] md:my-[16%] my-[8%] mx-[10%] sm:mx-[14%] md:mx-0">
             <Image
               alt="person modelling clay"
               width={500}
               height={750}
               src="/homepage/modellingClay.jpg"
-              className="rounded-sm hidden md:block"
+              className="rounded-md hidden md:block md:w-[290px] lg:w-[330px] xl:w-[360px] 2xl:w-[460px]"
             />
-            <div className=" md:ml-[120px] md:mr-[180px]">
+            <div className=" md:ml-8 lg:ml-12 2xl:ml-[100px] md:w-[380px] xl:w-[540px]">
               <Link href="/about" className="">
-                <h2 className=" font-oleo text-3xl mb-6 hover:text-secondary text-center md:text-left mt-[10%] md:mt-0">
+                <h2 className=" font-oleo text-3xl 2xl:text-4xl mb-6 hover:text-secondary text-center md:text-left mt-[10%] md:mt-0">
                   About <span className="font-oleoSwash">Niemand</span>
                 </h2>
               </Link>
-              <p className=" font-fraunces md:text-xl text-lg mb-7 leading-[2.25] text-center md:text-left">
-                When we realized, how well our craftings were receive by family
+              <p className=" font-fraunces lg:text-xl md:text-lg 2xl:text-2xl text-md mb-4 md:mb-7 leading-[2.25] text-center md:text-left">
+                When we realized, how well our craftings were received by family
                 and friends, we got encouraged to create
-                <span className="font-oleoSwash md:text-[26px] text-[22px]">
+                <span className="font-oleoSwash lg:text-[25px] text-[22px] 2xl:text-[28px]">
                   {' '}
                   Niemand
                 </span>
                 , so we can bring a smile to many more people.
               </p>
-              <p className=" font-fraunces md:text-xl text-lg leading-[2.25] text-center md:text-left">
+              <p className=" font-fraunces lg:text-xl md:text-lg 2xl:text-2xl text-md leading-[2.25] text-center md:text-left">
                 We sell handmade crafts, you can only find here. If you demand
                 ceramics especially crafted for you, we are the ones, who get it
                 done!

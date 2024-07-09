@@ -43,7 +43,7 @@ export default function LoginForm(props: Props) {
 
   return (
     <div className="mt-[103px] flex justify-center bg-tertiary font-inknut">
-      <div className="md:w-[500px] mt-16 mx-[10%] md:mx-0">
+      <div className="md:w-[500px] mt-16 mb-12 md:mt-16 mx-[10%] md:mx-0">
         <form
           onSubmit={(e) => {
             e.preventDefault();

@@ -15,7 +15,7 @@ export default function ProductQuantityForm(props: ProductQuantityFormProps) {
   }
   return (
     <form className="mt-4">
-      <div className="flex justify-around items-center">
+      <div className="flex justify-center gap-8 items-center">
         <label htmlFor="quantityInput">
           Quantity:
           <input

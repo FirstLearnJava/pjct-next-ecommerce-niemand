@@ -27,10 +27,10 @@ export default function Header({
   if (menuOpen === false) {
     return (
       <header
-        className={`w-full md:fixed absolute z-10 ${!scrolled && isHomePage ? 'bg-transparent border-b-0 text-white' : 'bg-primary border-secondary border-b-[3px]'}`}
+        className={`w-full md:fixed absolute z-20 ${!scrolled && isHomePage ? 'bg-transparent border-b-0 text-white' : 'bg-primary border-secondary border-b-[3px]'}`}
       >
         <nav className="flex justify-between items-center md:w-[86%] w-[90%] mx-auto h-[110px] md:h-[100px]">
-          <div className=" flex flex-col items-center justify-center mt-1 group">
+          <div className=" flex flex-col items-center justify-center mt-1 group ml-[4%] md:ml-0">
             <Link href="http://localhost:3000/">
               <Image
                 src={`${!scrolled && isHomePage ? '/header/logoWhite.svg' : '/header/logoBlack.svg'}`}
@@ -112,12 +112,6 @@ export default function Header({
                 onClick={() => setMenuOpen(!menuOpen)}
                 className="focus:outline-none"
               >
-                {/* <Image
-                  src="/header/hamburger.svg"
-                  alt="hamburger menu"
-                  width={30}
-                  height={30}
-                /> */}
                 <svg
                   width="30"
                   height="30"
@@ -142,7 +136,7 @@ export default function Header({
   }
   if (menuOpen === true) {
     return (
-      <div className="w-full flex flex-col gap-6 font-fraunces text-[22px]">
+      <div className=" bg-tertiary w-full h-full flex flex-col gap-6 font-fraunces text-[22px]">
         <button
           onClick={() => {
             setMenuOpen(false);
@@ -151,7 +145,7 @@ export default function Header({
         >
           X
         </button>
-        <ul className=" *:border-b-2 flex flex-col justify-center *:h-[70px]">
+        <ul className=" *:border-b-[2px] *:border-secondary flex flex-col justify-center *:h-[70px]">
           <li className="flex items-center pl-6">
             <button onClick={() => handleNavigation('/')}>Home</button>
           </li>
@@ -168,6 +162,9 @@ export default function Header({
           </li>
           <li className="flex items-center pl-6">
             <button onClick={() => handleNavigation('/cart')}>Cart</button>
+          </li>
+          <li className="flex items-center pl-6">
+            <button onClick={() => handleNavigation('/faqs')}>FAQ</button>
           </li>
         </ul>
       </div>

@@ -4,8 +4,8 @@ export default function FaqsPage() {
   return (
     <div className="bg-tertiary">
       <div className="flex flex-col mt-[103px] w-[75%] mx-[12.5%] gap-14 font-inknut px-[2%]  ">
-        <h1 className="text-center mt-20 text-[28px]">FAQS</h1>
-        <div>
+        <h1 className="text-center mt-20 text-[28px]">FAQs</h1>
+        <div className="mt-6">
           <h2 className="mb-3 text-lg">Return Policy</h2>
           <p className="font-fraunces leading-8">
             All sales are <span className=" font-semibold">final sale</span>{' '}

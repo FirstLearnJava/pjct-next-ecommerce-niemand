@@ -12,13 +12,13 @@ export default function LogoutButton() {
   };
 
   return (
-    <form className="flex items-center flex-col font-inknut w-[300px] mt-[170px]">
-      <div className="text-2xl text-center font-fraunces">
+    <form className="flex items-center flex-col font-inknut w-[300px] mt-[100px] lg:mt-[120px] xl:mt-[140px] mb-14">
+      <div className="sm:text-2xl text-xl text-center font-fraunces">
         You are already logged in.
       </div>
       <div className="flex justify-center mt-[26px]"></div>
       <button
-        className="bg-secondary w-[140px] h-10 rounded-md text-white font-inknut font-semibold text-[16px] uppercase"
+        className="bg-secondary sm:w-[140px] w-[110px] sm:h-10 h-8 rounded-md text-white font-inknut font-semibold sm:text-[16px] text-sm uppercase"
         formAction={handleLogOut}
       >
         LOGOUT

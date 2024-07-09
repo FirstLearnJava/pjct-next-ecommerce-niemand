@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function ShopNowButton() {
   return (
-    <div className=" w-[140px] md:mt-8 mt-6 ">
+    <div className=" w-[140px] md:mt-8 mt-4 mb-10">
       <Link
         href="/products"
         className="justify-center items-center flex flex-col group"

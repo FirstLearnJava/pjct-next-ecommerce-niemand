@@ -23,7 +23,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="pt-8">
-          <div className="md:text-xl underline mb-1 hover:text-secondary uppercase md:normal-case underline-offset-[3px]">
+          <div className="lg:text-xl underline mb-1 hover:text-secondary uppercase md:normal-case underline-offset-[3px]">
             <Link href="/products">Collection</Link>
           </div>
           <ul className="text-sm [&>*]:leading-9 md:*:leading-6">
@@ -40,7 +40,7 @@ export default function Footer() {
           </ul>
         </div>
         <div className="pt-8">
-          <div className="md:text-xl underline mb-1 uppercase md:normal-case underline-offset-[3px]">
+          <div className="lg:text-xl underline mb-1 uppercase md:normal-case underline-offset-[3px]">
             Contact Us
           </div>
           <ul className="text-sm [&>*]:leading-6 *:text-[12px] md:*:text-[14px]">
@@ -89,7 +89,7 @@ export default function Footer() {
           </ul>
         </div>
         <div className="pt-8">
-          <div className=" md:text-xl underline md:text-center mb-1 uppercase md:normal-case underline-offset-[3px]">
+          <div className=" lg:text-xl underline md:text-center mb-1 uppercase md:normal-case underline-offset-[3px]">
             Social
           </div>
           <div className="flex md:gap-4 gap-7 items-end md:mt-2 mt-4">
@@ -122,11 +122,11 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-        <div className=" md:text-xl underline mb-1 md:pt-8 pt-6 hover:text-secondary uppercase md:normal-case underline-offset-[3px]">
+        <div className=" lg:text-xl underline mb-1 md:pt-8 pt-6 hover:text-secondary uppercase md:normal-case underline-offset-[3px]">
           <Link href="/about">About</Link>
         </div>
-        <div className=" md:text-xl underline mb-1 md:pt-8 pt-6 hover:text-secondary uppercase md:normal-case underline-offset-[3px]">
-          <Link href="/faqs">FAQ's</Link>
+        <div className=" lg:text-xl underline mb-1 md:pt-8 pt-6 hover:text-secondary uppercase md:normal-case underline-offset-[3px]">
+          <Link href="/faqs">FAQs</Link>
         </div>
       </div>
     </footer>

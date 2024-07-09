@@ -27,7 +27,7 @@ export default function RegisterForm() {
   }
 
   return (
-    <div className="mt-16 font-inknut md:w-[500px] mx-[10%] md:mx-0">
+    <div className="mt-16 mb-12 md:mt-16 font-inknut md:w-[500px] mx-[10%] md:mx-0">
       <form
         onSubmit={(e) => {
           e.preventDefault();

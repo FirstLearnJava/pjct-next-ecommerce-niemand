@@ -14,19 +14,19 @@ export default async function ProductsPage(props: Props) {
 
   return (
     <div className="mt-[103px] flex flex-col bg-tertiary">
-      <section className="mt-12 pb-[20px] border-b-2 border-secondary">
+      <section className="mt-12 sm:pb-[20px] border-b-2 border-secondary">
         <div className="mx-[12.5%] mb-28">
-          <h2 className="text-center font-inknut text-[36px] mt-8">
+          <h2 className="text-center font-inknut sm:text-[36px] text-[32px] leading-10 mt-8">
             Some of our favorites
           </h2>
-          <div className="flex justify-between mt-[84px]">
+          <div className="lg:flex lg:justify-between lg:gap-10 grid  sm:grid-cols-2 sm:gap-[6%] gap-10 justify-center sm:mt-[84px] mt-14">
             <Link href={`/products/8`}>
               <Image
                 src={'/pottery/colorfulVase.jpg'}
                 width={260}
                 height={260}
                 alt={`colorful vase as favorite pottery item`}
-                className="rounded"
+                className="rounded mx-auto"
               />
             </Link>
             <Link href={`/products/17`}>
@@ -35,16 +35,16 @@ export default async function ProductsPage(props: Props) {
                 width={260}
                 height={260}
                 alt="yellow bowl as favorite pottery item"
-                className="rounded"
+                className="rounded mx-auto"
               />
             </Link>
-            <Link href={`/products/10`}>
+            <Link href={`/products/10`} className="lg:hidden xl:block">
               <Image
                 src={'/pottery/darkCupsSet.jpg'}
                 width={260}
                 height={260}
                 alt="dark cups as favorite pottery items"
-                className="rounded"
+                className="rounded mx-auto"
               />
             </Link>
             <Link href={`/products/15`}>
@@ -53,7 +53,7 @@ export default async function ProductsPage(props: Props) {
                 width={260}
                 height={260}
                 alt="italian set as favorite pottery items"
-                className="rounded"
+                className="rounded mx-auto"
               />
             </Link>
           </div>
