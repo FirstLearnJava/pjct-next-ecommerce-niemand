@@ -6,9 +6,10 @@ import { getValidSessionByToken } from '../../database/sessions';
 
 type Props = { searchParams: { returnTo?: string | string[] } };
 
-export default function page({ searchParams }: Props) {
+export default async function page({ searchParams }: Props) {
   const sessionCookie = cookies().get('sessionToken');
-  const session = sessionCookie && getValidSessionByToken(sessionCookie.value);
+  const session =
+    sessionCookie && (await getValidSessionByToken(sessionCookie.value));
 
   if (session) redirect('/logout');
   // Use the redirect option, if redirection to other page is necessary, when user is already logged in
