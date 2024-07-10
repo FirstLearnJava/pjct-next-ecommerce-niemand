@@ -4,6 +4,8 @@ import ProductSection from './ProductSection';
 import { Product } from '../../migrations/1707932515-createTableProducts';
 import Link from 'next/link';
 
+export const dynamic = 'force-dynamic';
+
 type Props = {
   params: { productId: string };
   searchParams: { [key: string]: string | string[] };

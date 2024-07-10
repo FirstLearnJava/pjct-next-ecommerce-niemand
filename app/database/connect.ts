@@ -1,6 +1,9 @@
 import 'server-only';
 import { config } from 'dotenv-safe';
 import postgres, { Sql } from 'postgres';
+import { setEnvironmentVariables } from '../../util/config.mjs';
+
+setEnvironmentVariables();
 
 if (!process.env.FLY_IO) config();
 //export const sql = postgres();

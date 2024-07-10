@@ -3,46 +3,53 @@
 # Exit if any command exits with a non-zero exit code
 set -o errexit
 
+# Check for required environment variables
+: "${PGDATABASE:?Need to set PGDATABASE}"
+: "${PGUSERNAME:?Need to set PGUSERNAME}"
+: "${PGPASSWORD:?Need to set PGPASSWORD}"
+
 # Set volume path for use in PostgreSQL paths if volume directory exists
-[ -d "../postgres-volume" ] && VOLUME_PATH=/postgres-volume
+VOLUME_PATH="/postgres-volume"
 
+# Create and set permissions for PostgreSQL directories
 echo "Creating folders for PostgreSQL and adding permissions for postgres user..."
-mkdir -p $VOLUME_PATH/run/postgresql/data/
-chown postgres:postgres $VOLUME_PATH/run/postgresql/ $VOLUME_PATH/run/postgresql/data/
+mkdir -p $VOLUME_PATH/run/postgresql/
+chown -R postgres:postgres $VOLUME_PATH
 
-# If PostgreSQL config file exists, start database. Otherwise, initialize, configure and create user and database.
-#
-# Config file doesn't exist during:
-# 1. First deployment of an app with a volume
-# 2. Every deployment of an app without a volume
-#
-if [[ -f $VOLUME_PATH/run/postgresql/data/postgresql.conf ]]; then
-  echo "PostgreSQL config file exists, starting database..."
-  su postgres -c "pg_ctl start -D /postgres-volume/run/postgresql/data/"
-else
-  echo "PostgreSQL config file doesn't exist, initializing database..."
+# Remove any existing data if initdb is to be run
+if [ -d "$VOLUME_PATH/run/postgresql" ]; then
+    rm -rf $VOLUME_PATH/run/postgresql/*
+fi
 
-  # Initialize a database in the data directory
-  su postgres -c "initdb -D $VOLUME_PATH/run/postgresql/data/"
+# Initialize PostgreSQL database
+echo "Initializing PostgreSQL database..."
+su postgres -c "initdb -D $VOLUME_PATH/run/postgresql/"
 
-  # Update PostgreSQL config path to use volume location if app has a volume
-  sed -i "s/'\/run\/postgresql'/'\/postgres-volume\/run\/postgresql'/g" /postgres-volume/run/postgresql/data/postgresql.conf || echo "PostgreSQL volume not mounted, running database as non-persistent (new deploys erase changes not saved in migrations)"
+# Configure PostgreSQL to listen for connections from any address
+echo "Configuring PostgreSQL to listen on all addresses..."
+echo "listen_addresses='*'" >> $VOLUME_PATH/run/postgresql/postgresql.conf
 
-  # Configure PostgreSQL to listen for connections from any address
-  echo "listen_addresses='*'" >> $VOLUME_PATH/run/postgresql/data/postgresql.conf
+# Start PostgreSQL
+echo "Starting PostgreSQL..."
+su postgres -c "pg_ctl start -D $VOLUME_PATH/run/postgresql/ -l $VOLUME_PATH/run/postgresql/logfile"
 
-  # Start database
-  su postgres -c "pg_ctl start -D $VOLUME_PATH/run/postgresql/data/"
+# Wait for PostgreSQL to start up
+sleep 5
 
-  # Create database and user with credentials from Fly.io secrets
-  psql -U postgres postgres << SQL
+# Create database and user with credentials from Fly.io secrets
+echo "Creating database and user..."
+su postgres -c "psql -U postgres postgres" <<SQL
     CREATE DATABASE $PGDATABASE;
     CREATE USER $PGUSERNAME WITH ENCRYPTED PASSWORD '$PGPASSWORD';
     GRANT ALL PRIVILEGES ON DATABASE $PGDATABASE TO $PGUSERNAME;
-    \\connect $PGDATABASE;
+    \connect $PGDATABASE;
     CREATE SCHEMA $PGUSERNAME AUTHORIZATION $PGUSERNAME;
 SQL
-fi
 
+# Run migrations
+echo "Running migrations..."
 pnpm migrate up
+
+# Start the application
+echo "Starting the application..."
 ./node_modules/.bin/next start
