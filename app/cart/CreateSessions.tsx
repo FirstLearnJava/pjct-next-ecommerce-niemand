@@ -10,8 +10,6 @@ interface CreateSessionsProps {
 export default function CreateSessions(props: CreateSessionsProps) {
   const router = useRouter();
 
-  const inserts = props.body;
-
   async function CreateSessionsAndRedirect() {
     const response = await fetch('/api/sessions', {
       method: 'POST',

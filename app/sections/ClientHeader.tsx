@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import Header from './Header';
 import { useRouter } from 'next/navigation';
 import { UrlObject } from 'url';

@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function ShopNowButton() {
@@ -28,7 +27,6 @@ export default function ShopNowButton() {
             />
           </svg>
         </button>
-        {/* I want the below div to change color  when I hover the parent 'Link' element*/}
         <div className=" border-2 border-secondary mt-1 w-[140px] mr-1 transition duration-200 group-hover:border-orange-700"></div>
       </Link>
     </div>

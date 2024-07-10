@@ -14,5 +14,11 @@ export default async function Adminpage() {
 
   // 3. Either redirect or render the login form
   if (!session) redirect('/login?returnTo=/admin');
-  return <div>This page is just accessible for logged in users.</div>;
+  return (
+    <div className="bg-tertiary">
+      <div className="sm:mt-[200px] mt-[140px] mb-10 font-fraunces text-xl flex justify-center">
+        This page is just accessible for logged in users.
+      </div>
+    </div>
+  );
 }

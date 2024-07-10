@@ -5,7 +5,6 @@ import camelcase from 'camelcase';
 import { Product } from '../../migrations/1707932515-createTableProducts';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 type Props = {
   products: Product[];

@@ -1,4 +1,4 @@
-import { Sql } from 'postgres';
+/* import { Sql } from 'postgres';
 
 type Discount = {
   id: number;
@@ -21,3 +21,4 @@ export async function down(sql: Sql) {
   DROP TABLE products_discounts;
   `;
 }
+ */

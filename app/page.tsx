@@ -5,20 +5,19 @@ import Link from 'next/link';
 import ShopNowButton from './components/ShopNowButton';
 
 export default function HomePage() {
-  /*   #fffdfb */
   return (
     <div className="bg-[#fffcf6] ">
       <div className="relative">
         <div>
           <div className="xl:bg-cover xl:block bg-center bg-no-repeat w-full xl:h-screen-30px justify-center xl:bg-hero bg-custom-gradient pb-[200px] xl:pb-0">
             <section className="pt-[100px] lg:px-[190px] mx-[5%] md:mx-0">
-              <h1 className="font-inknut sm:text-4xl  md:text-[44px] lg:text-[56px] xl:text-7xl text-[28px] leading-9 text-center xl:mt-[50px] mt-24 text-white">
+              <h1 className="font-inknut sm:text-4xl md:text-[44px] lg:text-[56px] xl:text-7xl text-[28px] leading-9 text-center xl:mt-[50px] mt-24 text-white">
                 Welcome to{' '}
                 <span className="font-oleoSwash text-[34px] sm:text-[40px] md:text-[54px] lg:text-[70px] xl:text-[80px]">
                   Niemand
                 </span>
               </h1>
-              <h2 className="text-white font-inknut   sm: text-lg md:text-xl lg:text-[32px] lg:leading-9 xl:text-4xl text-base text-center lg:mt-6 xl:mt-10 mt-4 ">
+              <h2 className="text-white font-inknut sm:text-lg md:text-xl lg:text-[32px] lg:leading-9 xl:text-4xl text-base text-center lg:mt-6 xl:mt-10 mt-4 ">
                 Your merchant for unique and contemporary pottery
               </h2>
             </section>
@@ -29,7 +28,7 @@ export default function HomePage() {
           <h2 className=" text-center font-oleo md:text-[40px] text-3xl md:mb-14 mb-7">
             Shop the Collection
           </h2>
-          <div className="flex  ">
+          <div className="flex">
             <div className="flex sm:flex-row flex-col sm:gap-[3%] sm:justify-between w-full">
               <div className="flex flex-col justify-center items-center">
                 <div className="relative w-[80%] flex justify-center sm:w-[170px] md:w-[186px]  lg:w-[260px]  xl:w-[300px] 2xl:w-[340px]  cursor-pointer">
@@ -55,7 +54,7 @@ export default function HomePage() {
                       alt=""
                       width={330}
                       height={330}
-                      src="/homepage/test3.jpeg"
+                      src="/homepage/cylinderIcon.jpeg"
                       className=" rounded-md "
                     />
                     <p className="absolute flex justify-center items-center inset-0 md:pt-[90px] pt-[70px] text-white font-oleo md:text-3xl text-[28px] z-10 uppercase">
@@ -72,7 +71,7 @@ export default function HomePage() {
                       alt=""
                       width={330}
                       height={330}
-                      src="/homepage/bowlsIconNew.jpg"
+                      src="/homepage/bowlsIcon.jpg"
                       className=" rounded-md"
                     />
                     <p className="absolute flex justify-center items-center inset-0 md:pt-[90px] pt-[70px] text-white font-oleo md:text-3xl text-[28px] z-10 uppercase">
