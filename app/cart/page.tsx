@@ -24,7 +24,7 @@ export default async function CartPage() {
   const body: Body = [];
 
   if (cartProducts) {
-    const asyncCartProducts = await Promise.all(
+    await Promise.all(
       cartProducts.map(async (cartProduct: CartProduct) => {
         const singleProduct = await getSingleProductsById(cartProduct.id);
         const retrievedItems = await stripeClient.products.retrieve(

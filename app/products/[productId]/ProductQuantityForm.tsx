@@ -37,7 +37,7 @@ export default function ProductQuantityForm(props: ProductQuantityFormProps) {
           formAction={async () =>
             await AddOrUpdateQuantity(props.productId, quantity)
           }
-          className="bg-secondary w-[120px] h-9 rounded-md text-white font-inknut font-semibold text-[12px] uppercase"
+          className="bg-secondary w-[120px] h-9 rounded-md text-white font-inknut font-semibold text-[12px] uppercase transform transition duration-100 active:scale-105"
         >
           add to cart
         </button>
