@@ -1,7 +1,8 @@
 app = "pjct-next-ecommerce-niemand"
 primary_region = "otp"
 
-# Apps without volume: Comment out the [mounts] configuration below [mounts]
+# Apps without volume: Comment out the [mounts] configuration below
+[mounts]
   source = "postgres"
   destination = "/postgres-volume"
 
