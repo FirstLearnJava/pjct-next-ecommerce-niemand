@@ -6,7 +6,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "ley-new": "node createMigration",
+    "ley-new": "f(){ touch migrations/$(date +%s)-$1.ts; }; f",
     "lint": "next lint",
     "migrate": "dotenv -- ley --require tsm",
     "start": "next start"
