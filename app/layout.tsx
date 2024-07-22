@@ -5,7 +5,7 @@ import { ReactNode } from 'react';
 
 export const metadata = {
   title: 'Niemand',
-  description: 'Your place for selfmade fashion and clothes',
+  description: 'Your place for selfmade pottery',
 };
 
 type RootLayoutProps = { children: ReactNode };
