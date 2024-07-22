@@ -9,7 +9,7 @@ export default function AboutPage() {
         <div className="flex flex-col lg:flex-row xl:items-center 2xl:items-start lg:mt-20 mt-14">
           <div className="lg:ml-10 mx-[6%] sm:mx-[15%] md:mx-[20%] lg:mx-0">
             <Image
-              src="/aboutPage/femaleSculptor.jpg"
+              src="/aboutPage/sculptor.jpg"
               width={432}
               height={650}
               alt="female sculptor"

@@ -31,7 +31,7 @@ export default function Header({
       >
         <nav className="flex justify-between items-center md:w-[86%] w-[90%] mx-auto h-[110px] md:h-[100px]">
           <div className=" flex flex-col items-center justify-center mt-1 group ml-[4%] md:ml-0">
-            <Link href="http://localhost:3000/">
+            <Link href="/">
               <Image
                 src={`${!scrolled && isHomePage ? '/header/logoWhite.svg' : '/header/logoBlack.svg'}`}
                 alt="logo"
@@ -40,14 +40,14 @@ export default function Header({
                 className="md:group-hover:scale-105 mb-[2px]"
               />
             </Link>
-            <Link href="http://localhost:3000/">
+            <Link href="/">
               <div
                 className={`font-oleoSwash text-sm leading-3 ${logoOnHover()}`}
               >
                 Pottery by
               </div>
             </Link>
-            <Link href="http://localhost:3000/">
+            <Link href="/">
               <div
                 className={`font-oleoSwash text-sm leading-4 ${logoOnHover()}`}
               >
@@ -80,10 +80,7 @@ export default function Header({
         )} */}
           </div>
           <div className="flex md:gap-10 gap-7 ">
-            <Link
-              href={'http://localhost:3000/login'}
-              className="hidden md:inline"
-            >
+            <Link href={'/login'} className="hidden md:inline">
               <Image
                 src={`${!scrolled && isHomePage ? '/header/userSymbolWhite.svg' : '/header/userSymbolBlack.svg'}`}
                 alt="user symbol"
@@ -92,10 +89,7 @@ export default function Header({
                 className="md:hover:scale-110"
               />
             </Link>
-            <Link
-              href="http://localhost:3000/cart"
-              className="hidden md:inline"
-            >
+            <Link href="/cart" className="hidden md:inline">
               <Image
                 src={`${!scrolled && isHomePage ? '/header/cartSymbolWhite.svg' : '/header/cartSymbolBlack.svg'}`}
                 alt="cart symbol"
