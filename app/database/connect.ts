@@ -10,26 +10,36 @@ declare module globalThis {
 }
 
 function connectOneTimeToDatabase() {
+  const host = process.env.PGHOST;
+  const user = process.env.PGUSERNAME;
+  const password = process.env.PGPASSWORD;
+  const database = process.env.PGDATABASE;
+  const ssl = true; // Adjust this if your database requires SSL
+
+  if (!host || !user || !password || !database) {
+    console.error('Missing database environment variables:');
+    console.error('PGHOST:', host);
+    console.error('PGUSERNAME:', user);
+    console.error('PGPASSWORD:', password ? '******' : 'Not set');
+    console.error('PGDATABASE:', database);
+    throw new Error(
+      'One or more required database environment variables are missing.',
+    );
+  }
+
   if (!('postgresSqlClient' in globalThis)) {
     globalThis.postgresSqlClient = postgres({
-      host: process.env.PGHOST,
-      user: process.env.PGUSERNAME,
-      password: process.env.PGPASSWORD,
-      database: process.env.PGDATABASE,
-      ssl: true, // Adjust this if your database requires SSL
+      host,
+      user,
+      password,
+      database,
+      ssl,
       transform: {
         ...postgres.camel,
         undefined: null,
       },
     });
   }
-
-  console.log('Connecting to database with the following settings:');
-  console.log('PGHOST:', process.env.PGHOST);
-  console.log('PGUSERNAME:', process.env.PGUSERNAME);
-  console.log('PGPASSWORD:', process.env.PGPASSWORD ? '******' : 'Not set');
-  console.log('PGDATABASE:', process.env.PGDATABASE);
-  console.log('SSL:', true);
 
   return ((
     ...sqlParameters: Parameters<typeof globalThis.postgresSqlClient>
