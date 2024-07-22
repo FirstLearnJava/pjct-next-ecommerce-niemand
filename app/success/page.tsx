@@ -6,7 +6,7 @@ export default function SuccessPage() {
     <div
       className="bg-cover bg-center bg-no-repeat w-full h-screen  items-center flex flex-col justify-center font-fraunces *:mx-[4%]"
       style={{
-        backgroundImage: "url('/successpageBackground.jpg')",
+        backgroundImage: "url('/successPageBackground.jpg')",
       }}
     >
       <h1 className="xl:-mt-40 sm:-mt-36 -mt-32 lg:text-4xl sm:text-3xl text-2xl text-center ">
