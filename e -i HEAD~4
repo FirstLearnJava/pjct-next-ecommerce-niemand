@@ -1,0 +1,19 @@
+[33m4ecc882[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Push new connect.ts for debugging
+[33m37e17e9[m Adapt links to use dynamic page root
+[33m0bac5fa[m  } from 'next/headers'; import postgres, { Sql } from 'postgres'; // import { setEnvironmentVariables } from '../../util/config.mjs';
+[33m575c61c[m Update connect.ts for debugging
+[33ma9581e0[m Delete fly.io files, update connect.ts
+[33m044eb7e[m Push updated postgres-connect for render
+[33m804aa8a[m Undo fly.toml typo
+[33ma98c2dc[m Update package.json script
+[33mc01c8f9[m Added comment to trigger a vercel deploy
+[33mcdbd3bc[m Add migration and singleProductPage button changes
+[33md9e791d[m Push .git.example and login page async correction
+[33mc66aa2a[m Update pnpm-lock.yaml to match package.json
+[33m42b5f93[m Add postgres and fly.io config
+[33mddab7c2[m Add fly.io setup and small design changes
+[33m758cc90[m Add missing parts of responsive design
+[33m7dd97cd[m Push half finished mobile design
+[33m6ed5d94[m Add finished webdesign without responsiveness
+[33m989be41[m Push almost finished Header and Footer
+[33ma083eba[m Push copy of old ecommerce and new dependenciese

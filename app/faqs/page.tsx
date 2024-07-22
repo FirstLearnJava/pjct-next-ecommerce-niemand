@@ -35,7 +35,7 @@ export default function FaqsPage() {
             Collections tend to sell out quickly. Follow{' '}
             <Link
               href="https://www.instagram.com"
-              className="font-semibold hover:text-secondary hover:scale-110"
+              className="font-semibold md:hover:text-secondary md:hover:scale-110"
             >
               @niemand
             </Link>{' '}

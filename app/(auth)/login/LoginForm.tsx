@@ -56,7 +56,7 @@ export default function LoginForm(props: Props) {
             <p>
               <Link
                 href="/register"
-                className=" hover:text-secondary inline-block"
+                className=" md:hover:text-secondary inline-block"
               >
                 Sign in here.
               </Link>

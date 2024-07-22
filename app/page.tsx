@@ -96,7 +96,7 @@ export default function HomePage() {
             />
             <div className=" md:ml-8 lg:ml-12 2xl:ml-[100px] md:w-[380px] xl:w-[540px]">
               <Link href="/about" className="">
-                <h2 className=" font-oleo text-3xl 2xl:text-4xl mb-6 hover:text-secondary text-center md:text-left mt-[10%] md:mt-0">
+                <h2 className=" font-oleo text-3xl 2xl:text-4xl mb-6 md:hover:text-secondary text-center md:text-left mt-[10%] md:mt-0">
                   About <span className="font-oleoSwash">Niemand</span>
                 </h2>
               </Link>

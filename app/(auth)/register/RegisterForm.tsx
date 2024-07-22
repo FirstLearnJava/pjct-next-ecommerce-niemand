@@ -38,7 +38,10 @@ export default function RegisterForm() {
         <div className="flex justify-center md:gap-5 gap-3 md:mt-4 mt-5 relative md:text-[16px] text-sm text-center">
           <p>Already have an account?</p>
           <p>
-            <Link href="/login" className=" hover:text-secondary inline-block">
+            <Link
+              href="/login"
+              className=" md:hover:text-secondary inline-block"
+            >
               Login here.
             </Link>
           </p>

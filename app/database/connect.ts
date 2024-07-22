@@ -1,9 +1,9 @@
 import 'server-only';
 import { headers } from 'next/headers';
 import postgres, { Sql } from 'postgres';
-import { setEnvironmentVariables } from '../../util/config.mjs';
+// import { setEnvironmentVariables } from '../../util/config.mjs';
 
-setEnvironmentVariables();
+// setEnvironmentVariables();
 
 declare module globalThis {
   let postgresSqlClient: Sql;
@@ -14,17 +14,10 @@ function connectOneTimeToDatabase() {
   const user = process.env.PGUSERNAME;
   const password = process.env.PGPASSWORD;
   const database = process.env.PGDATABASE;
-  const ssl = true; // Adjust this if your database requires SSL
+  const ssl = { rejectUnauthorized: false };
 
   if (!host || !user || !password || !database) {
-    console.error('Missing database environment variables:');
-    console.error('PGHOST:', host);
-    console.error('PGUSERNAME:', user);
-    console.error('PGPASSWORD:', password ? '******' : 'Not set');
-    console.error('PGDATABASE:', database);
-    throw new Error(
-      'One or more required database environment variables are missing.',
-    );
+    throw new Error('One or more environment variables are not set.');
   }
 
   if (!('postgresSqlClient' in globalThis)) {

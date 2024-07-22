@@ -7,7 +7,7 @@ export default function ShopNowButton() {
         href="/products"
         className="justify-center items-center flex flex-col group"
       >
-        <button className="font-oleo text-[18px] flex uppercase justify-center items-center gap-3  transition duration-200 group-hover:text-[19px] group-hover:gap-2">
+        <button className="font-oleo text-[18px] flex uppercase justify-center items-center gap-3  transition duration-200 md:group-hover:text-[19px] md:group-hover:gap-2">
           <div className="">Shop Now</div>
           <svg
             width="24"
@@ -15,7 +15,7 @@ export default function ShopNowButton() {
             viewBox="0 0 24 15"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
-            className="mb-1 transition duration-100 text-secondary group-hover:text-orange-700  group-hover:scale-110 "
+            className="mb-1 transition duration-100 text-secondary md:group-hover:text-orange-700  md:group-hover:scale-110 "
           >
             <path
               d="M18.7495 8.33335H5.25052C4.83055 8.33335 4.50058 7.96669 4.50058 7.50002C4.50058 7.03335 4.83055 6.66669 5.25052 6.66669H18.7495C19.1694 6.66669 19.4994 7.03335 19.4994 7.50002C19.4994 7.96669 19.1694 8.33335 18.7495 8.33335Z"
@@ -27,7 +27,7 @@ export default function ShopNowButton() {
             />
           </svg>
         </button>
-        <div className=" border-2 border-secondary mt-1 w-[140px] mr-1 transition duration-200 group-hover:border-orange-700"></div>
+        <div className=" border-2 border-secondary mt-1 w-[140px] mr-1 transition duration-200 md:group-hover:border-orange-700"></div>
       </Link>
     </div>
   );

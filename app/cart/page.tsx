@@ -136,7 +136,7 @@ export default async function CartPage() {
               width={250}
               height={250}
               alt="empy cart icon"
-              className="rounded-lg lg:w-[280px] hover:scale-105"
+              className="rounded-lg lg:w-[280px] md:hover:scale-105"
             ></Image>
           </Link>
           <p className="text-center mx-[10%] mb-20 lg:text-xl">

@@ -18,9 +18,9 @@ export default function Header({
 }: HeaderProps) {
   function logoOnHover() {
     if (scrolled && isHomePage) {
-      return 'group-hover:text-secondary';
+      return 'md:group-hover:text-secondary';
     } else if (!isHomePage) {
-      return 'group-hover:text-secondary';
+      return 'md:group-hover:text-secondary';
     }
   }
 
@@ -37,7 +37,7 @@ export default function Header({
                 alt="logo"
                 width={40}
                 height={45}
-                className="group-hover:scale-105 mb-[2px]"
+                className="md:group-hover:scale-105 mb-[2px]"
               />
             </Link>
             <Link href="http://localhost:3000/">
@@ -56,21 +56,18 @@ export default function Header({
             </Link>
           </div>
           <div className="hidden md:flex gap-20">
-            <Link
-              className="font-oleo text-[22px] hover:scale-105"
-              href="http://localhost:3000/"
-            >
+            <Link className="font-oleo text-[22px] md:hover:scale-105" href="/">
               Home
             </Link>
             <Link
-              className="font-oleo text-[22px] hover:scale-105"
-              href="http://localhost:3000/about"
+              className="font-oleo text-[22px] md:hover:scale-105"
+              href="/about"
             >
               About Us
             </Link>
             <Link
-              className="font-oleo text-[22px] hover:scale-105"
-              href="http://localhost:3000/products"
+              className="font-oleo text-[22px] md:hover:scale-105"
+              href="/products"
             >
               Catalogue
             </Link>
@@ -92,7 +89,7 @@ export default function Header({
                 alt="user symbol"
                 width={20}
                 height={23}
-                className="hover:scale-110"
+                className="md:hover:scale-110"
               />
             </Link>
             <Link
@@ -104,7 +101,7 @@ export default function Header({
                 alt="cart symbol"
                 width={23}
                 height={23}
-                className="hover:scale-110 mt-[2px]"
+                className="md:hover:scale-110 mt-[2px]"
               />
             </Link>
             <div className="md:hidden flex items-center mr-5 md:mr-0 mt-2 md:mt-0">
