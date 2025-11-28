@@ -9,7 +9,7 @@
     "ley-new": "f(){ touch migrations/$(date +%s)-$1.ts; }; f",
     "lint": "next lint",
     "migrate": "dotenv -- ley --require tsm",
-    "start": "next start"
+    "start": "next start -p $PORT"
   },
   "dependencies": {
     "autoprefixer": "^10.4.19",
