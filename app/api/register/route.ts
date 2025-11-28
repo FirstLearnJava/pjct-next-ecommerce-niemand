@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { User } from '../../../migrations/1715157338-createUsers';
 import { z } from 'zod';
 import { createUser, getUserByUsername, getUsers } from '../../database/users';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import crypto from 'node:crypto';
 import { createUserSession } from '../../database/sessions';
 import { cookies } from 'next/headers';

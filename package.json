@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.19",
-    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.3",
     "camelcase": "^8.0.0",
     "dotenv-cli": "^7.4.2",
     "dotenv-safe": "^9.1.0",

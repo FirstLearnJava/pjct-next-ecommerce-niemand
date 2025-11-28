@@ -8,7 +8,7 @@ import {
   getUserWithPasswordHashByUsername,
   getUsers,
 } from '../../database/users';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import crypto from 'node:crypto';
 import { createUserSession } from '../../database/sessions';
 import { cookies } from 'next/headers';
