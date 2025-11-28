@@ -113,7 +113,7 @@ export default function Header({
                   <path
                     d="M4.6875 7.5H25.3125M4.6875 15H25.3125M4.6875 22.5H25.3125"
                     stroke={`${!scrolled && isHomePage ? 'white' : 'black'}`}
-                    stroke-width="1.875"
+                    strokeWidth="1.875"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   />
