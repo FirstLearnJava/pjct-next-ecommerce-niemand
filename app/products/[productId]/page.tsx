@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { getSingleProductsById } from '../../database/products';
 import ProductQuantityForm from './ProductQuantityForm';
 import camelcase from 'camelcase';
+import BasketTotal from './BasketTotal';
 
 export const dynamic = 'force-dynamic';
 
@@ -26,11 +27,13 @@ export default async function ProductsPage(props: Props) {
         <Link
           href="/products?producttype=all%20products"
           className="md:ml-14 ml-8 font-medium"
-        >{`← all products`}</Link>
-        <Link
-          href="/cart"
-          className="md:mr-14 mr-8 font-medium"
-        >{`go to cart →`}</Link>
+        >
+          <span className="text-[18px]">←</span> all products
+        </Link>
+        <Link href="/cart" className="md:mr-14 mr-8 font-medium flex ">
+          go to &nbsp; <BasketTotal /> &nbsp;{' '}
+          <span className="text-[18px]">→</span>
+        </Link>
       </div>
       <div className=" flex flex-col items-center mt-8">
         <div>

@@ -1,5 +1,9 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
+import Cookies from 'js-cookie';
+import { ProductQuantity } from '../products/[productId]/actions';
+import { useEffect, useState } from 'react';
 
 type HeaderProps = {
   scrolled: boolean;
@@ -16,6 +20,22 @@ export default function Header({
   setMenuOpen,
   handleNavigation,
 }: HeaderProps) {
+  const [basketTotal, setBasketTotal] = useState(0);
+  const cookies = Cookies.get('productQuantities') || '[{"quantity":0}]';
+
+  useEffect(() => {
+    const jsonfiedCookies = JSON.parse(cookies);
+
+    const total = jsonfiedCookies.reduce(
+      (previous: number, product: ProductQuantity) => {
+        return previous + product.quantity;
+      },
+      0,
+    );
+
+    setBasketTotal(total);
+  }, [cookies]);
+
   function logoOnHover() {
     if (scrolled && isHomePage) {
       return 'md:group-hover:text-secondary';
@@ -80,23 +100,50 @@ export default function Header({
         )} */}
           </div>
           <div className="flex md:gap-10 gap-7 ">
-            <Link href={'/login'} className="hidden md:inline">
+            <Link
+              href={'/login'}
+              className="hidden md:inline relative top-[4px]"
+            >
               <Image
                 src={`${!scrolled && isHomePage ? '/header/userSymbolWhite.svg' : '/header/userSymbolBlack.svg'}`}
                 alt="user symbol"
-                width={20}
-                height={23}
+                width={23}
+                height={26}
                 className="md:hover:scale-110"
               />
             </Link>
-            <Link href="/cart" className="hidden md:inline">
+            <Link
+              href="/cart"
+              className="hidden md:inline relative group/basket"
+            >
               <Image
                 src={`${!scrolled && isHomePage ? '/header/cartSymbolWhite.svg' : '/header/cartSymbolBlack.svg'}`}
                 alt="cart symbol"
-                width={23}
-                height={23}
-                className="md:hover:scale-110 mt-[2px]"
+                width={31}
+                height={31}
+                className="md:group-hover/basket:scale-110 mt-[2px]"
               />
+              {basketTotal >= 1 && basketTotal <= 9 && (
+                <span
+                  className={`${!scrolled && isHomePage ? 'text-white' : 'text-secondary'} absolute top-[10px] left-[11px] font-mono  font-extrabold md:group-hover/basket:scale-110`}
+                >
+                  {basketTotal}
+                </span>
+              )}
+              {basketTotal >= 10 && basketTotal <= 99 && (
+                <span
+                  className={`${!scrolled && isHomePage ? 'text-white' : 'text-secondary'} absolute top-[10px] left-[7px] font-mono  font-extrabold text-[15px] md:group-hover/basket:scale-110`}
+                >
+                  {basketTotal}
+                </span>
+              )}
+              {basketTotal > 99 && (
+                <span
+                  className={`${!scrolled && isHomePage ? 'text-white' : 'text-secondary'} absolute top-[10px] left-[3px] font-mono  font-extrabold text-[15px] md:group-hover/basket:scale-110`}
+                >
+                  99+
+                </span>
+              )}
             </Link>
             <div className="md:hidden flex items-center mr-5 md:mr-0 mt-2 md:mt-0">
               <button
@@ -114,8 +161,8 @@ export default function Header({
                     d="M4.6875 7.5H25.3125M4.6875 15H25.3125M4.6875 22.5H25.3125"
                     stroke={`${!scrolled && isHomePage ? 'white' : 'black'}`}
                     strokeWidth="1.875"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
               </button>

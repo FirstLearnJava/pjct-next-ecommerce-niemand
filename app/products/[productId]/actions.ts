@@ -4,11 +4,12 @@ import getCookie from '../../utils/cookies';
 import parseJson from '../../utils/json';
 import { cookies } from 'next/headers';
 
+export type ProductQuantity = { id: number; quantity: number };
+
 export default async function AddOrUpdateQuantity(
   id: number,
   quantity: number,
 ) {
-  type ProductQuantity = { id: number; quantity: number };
   const productQuantityCookies = getCookie('productQuantities');
   const productQuantities: ProductQuantity[] = !productQuantityCookies
     ? []

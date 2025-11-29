@@ -11,16 +11,14 @@ type ClientHeaderProps = {
   setMenuOpen: (open: boolean) => void;
 };
 
-type Route = string | UrlObject;
-
 export default function ClientHeader({
   menuOpen,
   setMenuOpen,
 }: ClientHeaderProps) {
   const router = useRouter();
-  const handleNavigation = (path: Route) => {
+  const handleNavigation = (path: string) => {
     setMenuOpen(false);
-    router.push(path);
+    router.push(path as any);
   };
   const pathname = usePathname();
 
