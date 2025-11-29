@@ -31,8 +31,8 @@ export default async function ProductsPage(props: Props) {
           <span className="text-[18px]">←</span> all products
         </Link>
         <Link href="/cart" className="md:mr-14 mr-8 font-medium flex ">
-          go to &nbsp; <BasketTotal /> &nbsp;{' '}
-          <span className="text-[18px]">→</span>
+          go to &nbsp; <span className="max-md:hidden">basket</span>
+          <BasketTotal /> &nbsp; <span className="text-[18px]">→</span>
         </Link>
       </div>
       <div className=" flex flex-col items-center mt-8">

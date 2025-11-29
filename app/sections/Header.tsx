@@ -139,7 +139,7 @@ export default function Header({
               )}
               {basketTotal > 99 && (
                 <span
-                  className={`${!scrolled && isHomePage ? 'text-white' : 'text-secondary'} absolute top-[10px] left-[3px] font-mono  font-extrabold text-[15px] md:group-hover/basket:scale-110`}
+                  className={`${!scrolled && isHomePage ? 'text-white' : 'text-secondary'} absolute top-[9px] left-[4px] font-mono  font-extrabold text-[14px] md:group-hover/basket:scale-110`}
                 >
                   99+
                 </span>

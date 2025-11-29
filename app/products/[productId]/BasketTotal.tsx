@@ -23,31 +23,31 @@ function BasketTotal() {
     setBasketTotal(total);
   }, [cookies]);
   return (
-    <div className="relative bottom-[1px]">
+    <div className="relative bottom-[1px] md:hidden ">
       <Image
         src={'/header/cartSymbolBlack.svg'}
         alt="cart symbol"
         width={25}
         height={25}
-        className="md:group-hover/basket:scale-110"
+        className=""
       />
       {basketTotal >= 1 && basketTotal <= 9 && (
         <span
-          className={`text-secondary absolute top-[4px] right-[9px] font-mono text-[13px] font-extrabold md:group-hover/basket:scale-110`}
+          className={`text-secondary absolute top-[4px] right-[9px] font-mono text-[13px] font-extrabold`}
         >
           {basketTotal}
         </span>
       )}
       {basketTotal >= 10 && basketTotal <= 99 && (
         <span
-          className={`text-secondary absolute top-[4px] right-[6px] font-mono  font-extrabold text-[13px] md:group-hover/basket:scale-110`}
+          className={`text-secondary absolute top-[4px] right-[6px] font-mono  font-extrabold text-[13px]`}
         >
           {basketTotal}
         </span>
       )}
       {basketTotal > 99 && (
         <span
-          className={`text-secondary absolute top-[3px] right-[3px] text-[11px] font-mono  font-extrabold md:group-hover/basket:scale-110`}
+          className={`text-secondary absolute top-[3px] right-[3px] text-[11px] font-mono  font-extrabold`}
         >
           99+
         </span>
