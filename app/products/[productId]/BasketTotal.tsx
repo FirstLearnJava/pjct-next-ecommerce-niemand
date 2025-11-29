@@ -8,7 +8,6 @@ import Image from 'next/image';
 function BasketTotal() {
   const [basketTotal, setBasketTotal] = useState(0);
   const cookies = Cookies.get('productQuantities') || '[{"quantity":0}]';
-  console.log(basketTotal);
 
   useEffect(() => {
     const jsonfiedCookies = JSON.parse(cookies);
