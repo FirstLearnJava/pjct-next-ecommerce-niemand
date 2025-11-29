@@ -15,9 +15,9 @@ export default function LoginForm(props: Props) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  useEffect(() => {
+  /*   useEffect(() => {
     console.log('Initial returnTo:', props.returnTo);
-  }, [props.returnTo]);
+  }, [props.returnTo]); */
 
   async function login() {
     setError('');
@@ -34,7 +34,6 @@ export default function LoginForm(props: Props) {
       return;
     } else {
       setError('successful');
-      console.log(props);
 
       router.push(getSafeReturnToPath(props.returnTo) || (`/` as Route));
       //router.refresh();

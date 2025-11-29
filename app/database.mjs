@@ -6,10 +6,7 @@ config();
 
 const sql = postgres();
 
-console.log(
-  await sql`
+await sql`
   SELECT * FROM products;`,
-);
-
-//just for testing, if you need access to the commandline you have to shutoff postgres server
-await sql.end();
+  //just for testing, if you need access to the commandline you have to shutoff postgres server
+  await sql.end();

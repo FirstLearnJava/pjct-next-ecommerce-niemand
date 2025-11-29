@@ -40,7 +40,6 @@ export async function POST(
   const userWithPasswordHash = await getUserWithPasswordHashByUsername(
     result.data.username,
   );
-  console.log(userWithPasswordHash);
 
   if (!userWithPasswordHash) {
     return NextResponse.json(
@@ -54,7 +53,6 @@ export async function POST(
     result.data.password,
     userWithPasswordHash.passwordHash,
   );
-  console.log('is password valid?:', validatePassword);
 
   if (!validatePassword) {
     return NextResponse.json(
@@ -97,19 +95,3 @@ export async function POST(
     },
   );
 }
-//test
-
-/* const plaintextPassword = result.data.password;
-const storedHash = userWithPasswordHash!.passwordHash;
-
-// Manually hash the plaintext password for comparison
-const saltRounds = 10; // Ensure this matches your original hashing rounds
-const hashedPassword = await bcrypt.hash(plaintextPassword, saltRounds);
-
-console.log('Manually hashed password:', hashedPassword);
-console.log('Stored hash:', storedHash);
-
-const isPasswordValid = await bcrypt.compare(plaintextPassword, storedHash);
-console.log('Password comparison result:', isPasswordValid); */
-
-//test

@@ -42,8 +42,6 @@ export async function POST(
   const newUser = await createUser(result.data.username, passwordHash);
 
   if (!newUser) {
-    // zod sends details about the error
-    // console.log(result.error);
     return NextResponse.json(
       {
         error: 'There was an error creating the new user, please try again.',
