@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="w-full relative bottom-0 bg-primary border-t-[3px] border-secondary z-10 text-[14px] md:text-[16px]">
-      <div className="flex w-[86%] px-1 justify-between mx-auto md:h-[184px] font-inknut flex-col md:flex-row mb-6 md:mb-1">
+      <div className="flex w-[86%] px-1 justify-between mx-auto md:h-[156px] font-inknut flex-col md:flex-row mb-6 md:mb-1">
         <div className="md:flex flex-col  items-center h-full mt-2 justify-center group hidden">
           <Link href="/">
             <Image
@@ -22,11 +22,11 @@ export default function Footer() {
             Niemand
           </div>
         </div>
-        <div className="pt-8">
+        <div className="pt-6">
           <div className="lg:text-xl underline mb-1 md:hover:text-secondary uppercase md:normal-case underline-offset-[3px]">
             <Link href="/products">Collection</Link>
           </div>
-          <ul className="text-sm [&>*]:leading-9 md:*:leading-6">
+          <ul className="text-sm [&>*]:leading-[34px] md:*:leading-[22px]">
             <li className="md:hover:text-secondary cursor-pointer w-max md:hover:scale-105">
               <Link href="/products?producttype=cup">Cups</Link>
             </li>
@@ -39,7 +39,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className="pt-8">
+        <div className="pt-6">
           <div className="lg:text-xl underline mb-1 uppercase md:normal-case underline-offset-[3px]">
             Contact Us
           </div>
@@ -88,7 +88,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className="pt-8">
+        <div className="pt-6">
           <div className=" lg:text-xl underline md:text-center mb-1 uppercase md:normal-case underline-offset-[3px]">
             Social
           </div>
@@ -122,10 +122,10 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-        <div className=" lg:text-xl underline mb-1 md:pt-8 pt-6 md:hover:text-secondary uppercase md:normal-case underline-offset-[3px]">
+        <div className=" lg:text-xl underline mb-1 md:pt-6 pt-6 md:hover:text-secondary uppercase md:normal-case underline-offset-[3px]">
           <Link href="/about">About</Link>
         </div>
-        <div className=" lg:text-xl underline mb-1 md:pt-8 pt-6 md:hover:text-secondary uppercase md:normal-case underline-offset-[3px]">
+        <div className=" lg:text-xl underline mb-1 md:pt-6 pt-6 md:hover:text-secondary uppercase md:normal-case underline-offset-[3px]">
           <Link href="/faqs">FAQs</Link>
         </div>
       </div>
